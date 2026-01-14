@@ -1,5 +1,6 @@
 import "./globals.css";
-import {ThemeProvider} from "@/components/theme-provider";
+import {ThemeProvider} from "@/providers/theme-provider";
+import {AccountsProvider} from "@/providers/accounts-provider";
 
 export default function RootLayout({
                                        children,
@@ -17,7 +18,9 @@ export default function RootLayout({
             enableSystem={true}
             disableTransitionOnChange={true}
         >
-            {children}
+            <AccountsProvider>
+                {children}
+            </AccountsProvider>
         </ThemeProvider>
         </body>
         </html>
